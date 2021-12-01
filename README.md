@@ -10,3 +10,6 @@
 - `nprogress` progress loading bar
 - `react-horizontal-scrolling-menu` for gallery of images
 - `react-icons` for icons
+
+## Notes
+- You need to restart your terminal if you change your package.json, config files, or environment variables
