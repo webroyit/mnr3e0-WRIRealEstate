@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';   // This is an image coming from next.js
 import { Flex, Box, Text, Button } from '@chakra-ui/react';
 
+import Property from '../components/Property';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
 
 const Banner = ({ purpose, title1, title2, description1, description2, buttonText, linkName, imageUrl  }) => (
@@ -25,7 +26,6 @@ const Banner = ({ purpose, title1, title2, description1, description2, buttonTex
 );
 
 export default function Home({ propertiesForSale, propertiesForRent }) {
-  console.log( propertiesForSale, propertiesForRent);
   return (
     <Box>
       <Banner
@@ -38,7 +38,7 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
         linkName="/search?purpose=for-rent"
         imageUrl="https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8aG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" />
       <Flex flexWrap="wrap">
-
+        {propertiesForRent.map((property) => <Property property={property} key={property.id} /> )}
       </Flex>
       <Banner
         purpose={'BUY A HOME'}
@@ -50,7 +50,7 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
         linkName="/search?purpose=for-sale"
         imageUrl="https://images.unsplash.com/photo-1575517111478-7f6afd0973db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGhvdXNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" />
       <Flex flexWrap="wrap">
-      
+        {propertiesForSale.map((property) => <Property property={property} key={property.id} /> )}
       </Flex>
     </Box>
   )
