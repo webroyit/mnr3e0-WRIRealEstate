@@ -14,3 +14,5 @@
 ## Notes
 - You need to restart your terminal if you change your package.json, config files, or environment variables
 - Set up Chakra Provider when using Chakra-UI
+- Next.js uses file-based routing
+- No need to do arrow function if the functin is calling itself
