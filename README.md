@@ -1,4 +1,10 @@
 # WRI Real Esate
+An Real Estate Application.  The template is from JavaScript Mastery youtube channel
+
+## Add .env
+```
+NEXT_PUBLIC_RAPID_API_KEY= /* API key from https://rapidapi.com/ */
+```
 
 ## Dependencies
 - `@chakra-ui/react` for UI
